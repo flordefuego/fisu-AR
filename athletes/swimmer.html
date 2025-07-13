@@ -1,0 +1,26 @@
+<a-scene mindar-image="imageTargetSrc: assets/swimmer-target.mind;" color-space="sRGB"
+  renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+  device-orientation-permission-ui="enabled: false">
+  <a-assets>
+    <!-- <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.png" />-->
+    <img id="card" src="assets/swimmer.jpg" />
+    <img id="solid-plane" src="assets/swimmer-solid.png">
+    <img id="stroke-line" src="assets/swimmer-stroke.png">
+  </a-assets>
+  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+  <a-entity mindar-image-target="targetIndex: 0">
+    <a-entity id="ocean" ocean="density: 10; width: 5; depth: 5; speed: 4"
+      material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
+    <a-image src="#stroke-line" position="0.985 1.060 -1.55" width="4" height="2"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      animation__2="property: position; from:0.985 2.060 -1.55; to:0.985 1.060 -1.55 loop: true; easing:easeInOutElastic; dur: 1000"></a-image>
+    <a-image src="#solid-plane" material="side:double" position="1 1 -1.5" width="4" height="2"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      animation__2="property: position; from:1 2 -1.5; to:1 1 -1.5 loop: true; easing:easeInOutElastic; dur: 1000"></a-image>
+    <a-image src="#stroke-line" position="0.985 1.060 -1.45" width="4" height="2"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      animation__2="property: position; from:0.985 2.060 -1.45; to:0.985 1.060 -1.45 loop: true; easing:easeInOutElastic; dur: 1000"></a-image>
+
+  </a-entity>
+
+</a-scene>
